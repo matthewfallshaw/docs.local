@@ -1,0 +1,10 @@
+- if leaf?(@dir)
+  %li
+    %a{ :href => without_public(leaf_index(@dir)) }
+      = last_dir(@dir)
+- else
+  %li
+    = last_dir(@dir)
+    %ul
+      - Dir[File.join(@dir,"*")].each do |@dir|
+        = haml :_dir

@@ -1,0 +1,9 @@
+!!!xhtml
+%html
+  %head
+    %title Local Docs -- notnux
+  %body
+    %h1 Local Docs
+    %ul
+      - @docs.each do |@dir|
+        = haml :_dir
